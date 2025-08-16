@@ -14,6 +14,7 @@ int main(void) {
     //window
         
     while (!WindowShouldClose()) {
+        UpdatePoniko();
         
         BeginDrawing();
             ClearBackground(WHITE);

@@ -17,7 +17,7 @@ direction DIR_LAST = DIR_NULL;
 
 typedef struct Poniko {
     Vector2 spritePosition;
-    Texture2D texture;
+    Texture2D ponikoFrontSprite, ponikoBackSprite, ponikoRightSprite, ponikoLeftSprite ;
     Rectangle frameBorder;
     
     int currentFrame;
@@ -34,6 +34,7 @@ extern "C" {
 
 void SetPoniko(void);
 void DrawPoniko(void);
+void UpdatePoniko(void);
 
 #ifdef __cplusplus
 }
