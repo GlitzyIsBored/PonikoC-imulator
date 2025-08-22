@@ -13,7 +13,7 @@ void SetPoniko(void) {
     poniko.spritePosition = (Vector2){SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2};
     poniko.frameWidth = poniko.ponikoFrontSprite.width / 4;
     poniko.frameBorder = (Rectangle){0, 0, poniko.frameWidth, 63};
-    poniko.spriteSpeed = 0.02f;
+    poniko.spriteSpeed = 0.01f;
     //set sprite animation
     poniko.currentFrame = 0;
     poniko.frameCounter = 0;
@@ -44,12 +44,7 @@ void UpdatePoniko(void) {
         }
     }
     poniko.frameBorder.x = poniko.currentFrame * poniko.frameWidth;
-    
-    if (IsKeyDown(KEY_UP) && IsKeyDown(KEY_RIGHT)) {
-        poniko.spritePosition.x += 0;
-    } 
-  
-  
+     
 }
 
 void DrawPoniko(void) {

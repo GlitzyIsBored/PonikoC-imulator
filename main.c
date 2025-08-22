@@ -8,18 +8,39 @@
 Poniko poniko;
 
 int main(void) {
+    currentScreen TitleScreen = TITLE;
     InitWindow(SCREEN_HEIGHT, SCREEN_WIDTH, "omg Poniko Simulator");
     setGameplayScreen();
     SetPoniko();
     //window
         
-    while (!WindowShouldClose()) {
+    while (!WindowShouldClose()) {   
+        switch (TitleScreen) {
+            case TITLE: {
+                if (IsKeyPressed(KEY_ENTER)) {
+                    TitleScreen = GAMEPLAY;
+                }
+            } break;
+                default: break;
+        }    
         UpdatePoniko();
         
         BeginDrawing();
-            ClearBackground(WHITE);
-            drawGameplayScreen();
-            DrawPoniko();
+        switch(TitleScreen) {
+            case TITLE:
+            {
+                DrawTexture(title, 0, 0, WHITE);
+                
+            } 
+            break;
+            case GAMEPLAY:
+            {
+                drawGameplayScreen();           
+                DrawPoniko();             
+            }
+            break;
+            default: break;
+        }           
         EndDrawing();
     }
     CloseWindow();

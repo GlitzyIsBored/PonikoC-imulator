@@ -1,15 +1,18 @@
 #ifndef GAMESCREENS_H
 #define GAMESCREENS_H
 
+#define titleScreen "Other/Title_Screen.png"
 #define lightBackgroundPath "PonikoHouse/PonikoRoom_Light_On.png"
+#define darkBackgroundPath "PonikoHouse/PonikoRoom_Light_Off.png"
+
 #ifdef __cplusplus
 extern "C" { 
 #endif
-/*typedef enum = {
-    titleScreen,
-    gameplayScreen,
+typedef enum currentScreen {
+    TITLE,
+    GAMEPLAY,
 } currentScreen;
-*/
+
 void setGameplayScreen(void);
 void drawGameplayScreen(void);
 

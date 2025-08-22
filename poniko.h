@@ -22,6 +22,7 @@ typedef struct Poniko {
     
     int currentFrame;
     int frameWidth;
+    float spriteSpeed;
     float frameCounter;
     float frameSpeed;
 } Poniko;
