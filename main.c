@@ -10,6 +10,9 @@ Poniko poniko;
 int main(void) {
     currentScreen TitleScreen = TITLE;
     InitWindow(SCREEN_HEIGHT, SCREEN_WIDTH, "omg Poniko Simulator");
+    //omg Icon
+    SetWindowIcon(LoadImage("Other/ponICON.png"));
+    
     setGameplayScreen();
     SetPoniko();
     //window
@@ -24,13 +27,23 @@ int main(void) {
                 default: break;
         }    
         UpdatePoniko();
-        
+                int btnIndex = 0;
+                float btnTime = 1.0;
+                Rectangle btnSource = (Rectangle){btnIndex * 2,0, 480, 175};
+                if (btnTime < 0) {
+                    btnTime = 1;
+                    btnIndex++;
+                    if (btnIndex >= 1) {
+                        btnIndex = 0;
+                    }
+                }      
+                btnTime -= GetFrameTime();         
         BeginDrawing();
         switch(TitleScreen) {
             case TITLE:
             {
                 DrawTexture(title, 0, 0, WHITE);
-                
+                DrawTextureRec(button, btnSource, (Vector2){55 ,350}, WHITE);
             } 
             break;
             case GAMEPLAY:
